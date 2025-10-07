@@ -1,0 +1,10 @@
+# Use PHP with Apache
+FROM php:8.2-apache
+
+# Install MySQL support for PHP
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Copy backend code
+COPY . /var/www/html/
+
+EXPOSE 80
